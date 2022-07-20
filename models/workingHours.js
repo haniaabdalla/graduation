@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const workingHoursSchema = new Schema({
     day: {
         type: String,
-        required: true,
     },
     from: {
         type: String,
