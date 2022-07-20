@@ -9,7 +9,7 @@ router.route("/add_hours").post(async (req, res) => {
     const from = req.body.from;
     const to = req.body.to;
     const hours = await hoursModel.findOne({ service_id: id, day: day });
-    if (hours.day == day) {
+    if (hours) {
         await hoursModel.findByIdAndUpdate(hours.id, { from: from, to: to }).exec();
     }
     else {
